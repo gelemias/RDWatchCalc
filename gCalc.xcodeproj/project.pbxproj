@@ -233,6 +233,7 @@
 					};
 					9D73FD901D2912A8004D6CF6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 263W69FFVW;
 					};
 				};
 			};
@@ -461,6 +462,7 @@
 		9D73FDA11D2912A8004D6CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "gCalc watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guillermord.gCalc.watchkitapp.watchkitextension;
@@ -475,6 +477,7 @@
 		9D73FDA21D2912A8004D6CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "gCalc watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guillermord.gCalc.watchkitapp.watchkitextension;
@@ -548,6 +551,7 @@
 				9D73FDA21D2912A8004D6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D73FDA41D2912A8004D6CF6 /* Build configuration list for PBXNativeTarget "gCalc watch" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +560,7 @@
 				9D73FDA61D2912A8004D6CF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gCalc  created by Guillermo R. Delgado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBj-e2-wVB">
-                                <rect key="frame" x="150" y="290" width="300" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="MTs-wm-s1o">
+                                <rect key="frame" x="270" y="210" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created by Guillermo R. Delgado" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBj-e2-wVB">
+                                <rect key="frame" x="40" y="288" width="520" height="23"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -27,7 +31,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kBj-e2-wVB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="D86-AJ-JTD"/>
+                            <constraint firstItem="kBj-e2-wVB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Oc0-uR-R9D"/>
+                            <constraint firstItem="MTs-wm-s1o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="cVo-Md-4Ur"/>
                             <constraint firstItem="kBj-e2-wVB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f6m-sX-17O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kBj-e2-wVB" secondAttribute="trailing" constant="20" id="fuI-Sg-5Rr"/>
+                            <constraint firstItem="MTs-wm-s1o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iTg-9Q-RUT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -35,4 +43,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-60" width="60" height="60"/>
+    </resources>
 </document>
