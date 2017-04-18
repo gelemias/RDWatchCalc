@@ -1,5 +1,5 @@
  ![Watch calc](Icon.png)
-# watch-calc
+# RDWatchCalc
 
 apple watch calculator written in swift
 
