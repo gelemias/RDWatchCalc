@@ -4,8 +4,7 @@
 apple watch calculator written in swift
 
 
-<br>
-#### Licence
+### Licence
 The MIT License (MIT)
 
 
