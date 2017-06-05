@@ -10,158 +10,126 @@ import WatchKit
 import Foundation
 
 class InterfaceController: WKInterfaceController {
-    
+
     var currentValue: String = "0"
     var command: Command?
     var calculationExecuted = false
-    
+
     @IBOutlet weak var displayLabel: WKInterfaceLabel!
-    
-    func numberPressed(value: Int)
-    {
+
+    func numberPressed(_ value: Int) {
         let newValue = "\(value)"
-        
-        if currentValue == "0" || calculationExecuted
-        {
+
+        if currentValue == "0" || calculationExecuted {
             calculationExecuted = false
             currentValue = newValue
-        }
-        else
-        {
+        } else {
             currentValue += newValue
         }
-        
+
         displayLabel.setText(currentValue)
     }
-    
-    func setDisplayValue(value: Double)
-    {
-        if value % 1 == 0
-        {
+
+    func setDisplayValue(_ value: Double) {
+        if value.truncatingRemainder(dividingBy: 1) == 0 {
             // our value is an integer
             currentValue = "\(Int(value))"
-        }
-        else
-        {
+        } else {
             // our value is a float
             currentValue = "\(value)"
         }
-        
+
         displayLabel.setText(currentValue)
     }
-    
-    func commandTapped(type: CommandType)
-    {
+
+    func commandTapped(_ type: CommandType) {
         calculationExecuted = false
-        if command != nil
-        {
+        if command != nil {
             command!.type = type
-        }
-        else
-        {
+        } else {
             command = Command(type: type, leftValue: (currentValue as NSString).doubleValue)
             currentValue = "0"
         }
     }
-    
-    @IBAction func answerTapped()
-    {
-        if command != nil
-        {
+
+    @IBAction func answerTapped() {
+        if command != nil {
             let answer = command!.executeWithNewValue((currentValue as NSString).doubleValue)
             setDisplayValue(answer)
             command = nil
             calculationExecuted = true
         }
     }
-    
-    
-    @IBAction func clearTapped()
-    {
+
+    @IBAction func clearTapped() {
         command = nil
         currentValue = "0"
         displayLabel.setText(currentValue)
     }
-    
-    @IBAction func decimalTapped()
-    {
-        if currentValue.rangeOfString(".") == nil
-        {
+
+    @IBAction func decimalTapped() {
+        if currentValue.range(of: ".") == nil {
             currentValue += "."
             displayLabel.setText(currentValue)
         }
     }
-    
-    //MARK: number buttons
-    
-    @IBAction func button0tapped()
-    {
+
+// MARK: number buttons
+
+    @IBAction func button0tapped() {
         numberPressed(0)
     }
-    
-    @IBAction func button1Tapped()
-    {
+
+    @IBAction func button1Tapped() {
         numberPressed(1)
     }
-    
-    @IBAction func button2Tapped()
-    {
+
+    @IBAction func button2Tapped() {
         numberPressed(2)
     }
-    
-    @IBAction func button3Tapped()
-    {
+
+    @IBAction func button3Tapped() {
         numberPressed(3)
     }
-    
-    @IBAction func button4Tapped()
-    {
+
+    @IBAction func button4Tapped() {
         numberPressed(4)
     }
-    
-    @IBAction func button5Tapped()
-    {
+
+    @IBAction func button5Tapped() {
         numberPressed(5)
     }
-    
-    @IBAction func button6Tapped()
-    {
+
+    @IBAction func button6Tapped() {
         numberPressed(6)
     }
-    
-    @IBAction func button7Tapped()
-    {
+
+    @IBAction func button7Tapped() {
         numberPressed(7)
     }
-    
-    @IBAction func button8Tapped()
-    {
+
+    @IBAction func button8Tapped() {
         numberPressed(8)
     }
-    
-    @IBAction func button9Tapped()
-    {
+
+    @IBAction func button9Tapped() {
         numberPressed(9)
     }
-    
-    //MARK: command buttons
-    
-    @IBAction func addTapped()
-    {
-        commandTapped(.Add)
+
+// MARK: command buttons
+
+    @IBAction func addTapped() {
+        commandTapped(.add)
     }
-    
-    @IBAction func subtractTapped()
-    {
-        commandTapped(.Subtract)
+
+    @IBAction func subtractTapped() {
+        commandTapped(.subtract)
     }
-    
-    @IBAction func multiplyTapped()
-    {
-        commandTapped(.Multiply)
+
+    @IBAction func multiplyTapped() {
+        commandTapped(.multiply)
     }
-    
-    @IBAction func divideTapped()
-    {
-        commandTapped(.Divide)
+
+    @IBAction func divideTapped() {
+        commandTapped(.divide)
     }}

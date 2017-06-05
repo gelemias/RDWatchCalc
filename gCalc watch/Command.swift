@@ -8,38 +8,33 @@
 
 import Foundation
 
-enum CommandType
-{
-    case Divide
-    case Multiply
-    case Subtract
-    case Add
+enum CommandType {
+    case divide
+    case multiply
+    case subtract
+    case add
 }
 
-class Command: NSObject
-{
+class Command: NSObject {
     var type: CommandType
     let leftValue: Double
-    
-    init(type: CommandType, leftValue: Double)
-    {
+
+    init(type: CommandType, leftValue: Double) {
         self.type = type
         self.leftValue = leftValue
         super.init()
     }
-    
-    func executeWithNewValue(newValue: Double) -> Double
-    {
+
+    func executeWithNewValue(_ newValue: Double) -> Double {
         var result = leftValue
-        
-        switch type
-        {
-        case .Divide: result /= newValue
-        case .Multiply: result *= newValue
-        case .Subtract: result -= newValue
-        case .Add: result += newValue
+
+        switch type {
+        case .divide: result /= newValue
+        case .multiply: result *= newValue
+        case .subtract: result -= newValue
+        case .add: result += newValue
         }
-        
+
         return result
     }
 }
